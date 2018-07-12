@@ -87,7 +87,7 @@ export default class Calendar extends Component {
 			endDate: isEndValid ? end : null,
 			endDateText: isEndValid ? this._i18n(end, 'date') : '',
 			endWeekdayText: isEndValid ? this._i18n(this._getIsoWeekdayForI18n(end), 'weekday') : '',
-			isClearVisible: isClearVisible,
+			isClearVisible: isClearVisible==null ? false : isClearVisible,
 		});
 	}
 	_getIsoWeekdayForI18n(day) {
@@ -342,5 +342,5 @@ Calendar.defaultProps = {
 	customStyles: {},
 	dateRangeValidator: null,
 	color: {},
-	isClearVisible: false
+	isClearVisible: null
 }
