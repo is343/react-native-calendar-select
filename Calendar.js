@@ -87,7 +87,7 @@ export default class Calendar extends Component {
 			endDate: isEndValid ? end : null,
 			endDateText: isEndValid ? this._i18n(end, 'date') : '',
 			endWeekdayText: isEndValid ? this._i18n(this._getIsoWeekdayForI18n(end), 'weekday') : '',
-			isClearVisible: isClearVisible ? isClearVisible : true,
+			isClearVisible: isClearVisible,
 		});
 	}
 	_getIsoWeekdayForI18n(day) {
@@ -250,6 +250,7 @@ export default class Calendar extends Component {
 								source={{ uri: ICON.close }}
 								resizeMode="cover" />
 						</TouchableHighlight>
+						data:{_isClearVisible}
 						{_isClearVisible && <TouchableHighlight
 							underlayColor="transparent"
 							activeOpacity={0.8}
