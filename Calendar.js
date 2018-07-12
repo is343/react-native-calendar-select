@@ -233,7 +233,7 @@ export default class Calendar extends Component {
 		let mainFontColor = { color: mainColor };
 		let subFontColor = { color: subColor };
 		let isValid = !startDate || endDate;
-		isClearVisible = isClearVisible && (startDate || endDate);
+		let _isClearVisible = isClearVisible && (startDate || endDate);
 		return (
 			<Modal
 				animationType={'slide'}
@@ -250,7 +250,7 @@ export default class Calendar extends Component {
 								source={{ uri: ICON.close }}
 								resizeMode="cover" />
 						</TouchableHighlight>
-						{isClearVisible && <TouchableHighlight
+						{_isClearVisible && <TouchableHighlight
 							underlayColor="transparent"
 							activeOpacity={0.8}
 							onPress={this.clear}>
