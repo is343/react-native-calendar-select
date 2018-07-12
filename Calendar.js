@@ -73,7 +73,8 @@ export default class Calendar extends Component {
 		const {
 			startDate,
 			endDate,
-			format
+			format,
+			isClearVisible
 		} = this.props;
 		let start = Moment(startDate, format);
 		let end = Moment(endDate, format);
@@ -85,7 +86,8 @@ export default class Calendar extends Component {
 			startWeekdayText: isStartValid ? this._i18n(this._getIsoWeekdayForI18n(start), 'weekday') : '',
 			endDate: isEndValid ? end : null,
 			endDateText: isEndValid ? this._i18n(end, 'date') : '',
-			endWeekdayText: isEndValid ? this._i18n(this._getIsoWeekdayForI18n(end), 'weekday') : ''
+			endWeekdayText: isEndValid ? this._i18n(this._getIsoWeekdayForI18n(end), 'weekday') : '',
+			isClearVisible: isClearVisible ? isClearVisible : true,
 		});
 	}
 	_getIsoWeekdayForI18n(day) {
@@ -213,7 +215,8 @@ export default class Calendar extends Component {
 			startDateText,
 			startWeekdayText,
 			endDateText,
-			endWeekdayText
+			endWeekdayText,
+			isClearVisible
 		} = this.state;
 		const {
 			mainColor = '#15aaaa',
@@ -230,7 +233,7 @@ export default class Calendar extends Component {
 		let mainFontColor = { color: mainColor };
 		let subFontColor = { color: subColor };
 		let isValid = !startDate || endDate;
-		let isClearVisible = startDate || endDate;
+		isClearVisible = isClearVisible && (startDate || endDate);
 		return (
 			<Modal
 				animationType={'slide'}
