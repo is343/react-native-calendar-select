@@ -250,7 +250,7 @@ export default class Calendar extends Component {
 								source={{ uri: ICON.close }}
 								resizeMode="cover" />
 						</TouchableHighlight>
-						data:{_isClearVisible}
+						<Text>data:{_isClearVisible}</Text>
 						{_isClearVisible && <TouchableHighlight
 							underlayColor="transparent"
 							activeOpacity={0.8}
