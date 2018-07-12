@@ -2,7 +2,7 @@
  * Created by TinySymphony on 2017-05-11.
  */
 
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Text,
@@ -10,6 +10,7 @@ import {
   Dimensions
 } from 'react-native';
 import Moment from 'moment';
+import PropTypes from 'prop-types';
 import styles from './CalendarStyle';
 import Month from './Month';
 const {width} = Dimensions.get('window');
