@@ -341,5 +341,6 @@ Calendar.defaultProps = {
 	customI18n: {},
 	customStyles: {},
 	dateRangeValidator: null,
-	color: {}
+	color: {},
+	isClearVisible: true
 }
