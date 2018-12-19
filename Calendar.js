@@ -122,7 +122,7 @@ export default class Calendar extends Component {
 			startDate,
 			endDate
 		} = this.state;
-		if ((!startDate && !endDate) || day < startDate || (startDate && endDate)) {
+		if ((!startDate && !endDate) || day < startDate || (startDate && endDate) || Math.abs(day.diff(startDate, "days") >= 2)) {
 			this.setState({
 				startDate: day,
 				endDate: null,
@@ -131,7 +131,7 @@ export default class Calendar extends Component {
 				endDateText: '',
 				endWeekdayText: '',
 			});
-		} else if (startDate && !endDate && day >= startDate) {
+		} else if (startDate && !endDate && day >= startDate && Math.abs(day.diff(startDate, "days") < 2)) {
 			this.setState({
 				endDate: day,
 				endDateText: this._i18n(day, 'date'),
