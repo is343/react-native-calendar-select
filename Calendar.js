@@ -233,7 +233,7 @@ export default class Calendar extends Component {
 		let mainFontColor = { color: mainColor };
 		let subFontColor = { color: subColor };
 		let isValid = !startDate || endDate;
-		let _isClearVisible = (isClearVisible==null ? false : isClearVisible)  && (startDate || endDate);
+		let _isClearVisible = (startDate || endDate);
 		return (
 			<Modal
 				animationType={'slide'}
